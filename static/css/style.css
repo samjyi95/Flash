@@ -2,12 +2,16 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: #b0bec5;
+    background-color: #212121;
     text-align: center;
+    background-image: url(https://cdn.dribbble.com/users/1377727/screenshots/3648600/lightning-bolt.png) ;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+
 h1 {
-    color: skyblue;
+    color:#E1B812;
 }
 
 body {
@@ -19,15 +23,25 @@ body {
 main {
     flex: 1 0 auto;
 }
-
+p{
+    color: white;
+}
 i {
     color: #263238;
 }
-
 li {
     list-style: none;
 }
-
 #profPageIcon {
     display: inline;
+}
+.card-content {
+    background-color: #000000;
+    text-align: left;
+}
+.flexbox {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
 }

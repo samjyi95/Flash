@@ -1,9 +1,9 @@
-<h1><%= user.firstname %></h1>
+<h1><%= user.username %></h1>
 
 <div class="row">
     <div class="col s4">
         <img 
-        class="materialboxed responsive-img"  
+        class="materialboxed" 
         width="650" 
         src="<%= user.pic %>" 
         alt="profile pic" 
@@ -22,13 +22,13 @@
 </div>
 <div class="row">
     <li class="col s4">
-        <a href="/logistics/posting"><i class="large material-icons" >add_a_photo</i></a>
+        <a href="/logistics/posting"><i class="large material-icons" style="color: #607d8b;" >add_a_photo</i></a>
     </li>
     <li class="col s4">
-        <a href="/logistics/userIndex"><i class="large material-icons" >people</i></a>
+        <a href="/logistics/userIndex"><i class="large material-icons" style="color: #607d8b;">people</i></a>
     </li>
     <li class="col s4">
-        <a href="/logistics/feed"><i class="large material-icons" >image</i></a>
+        <a href="/logistics/feed"><i class="large material-icons" style="color: #607d8b;">image</i></a>
     </li>
 </div>
 
@@ -38,12 +38,12 @@
     <div class="col s4" >
         <ul>
             <li style="height: 550px;">
-                <div style="margin: auto;">
-                <a href="/logistics/viewPic/p.id"><img src="<%= p.picPost %>" style="width: 350px; height: auto;" ></a>
+                <div >
+                    <img src="<%= p.picPost %>" style="width: 350px; height: auto;" class="materialboxed" width="650"  >
                     <p><%= p.caption %> </p>
-                <form method="POST" action="/logistics/posts/<%= p.id %>/?_method=DELETE">
-                    <input type="submit" class="btn-small red" value="Delete Picture">
-                </form>
+                        <form method="POST" action="/logistics/posts/<%= p.id %>/?_method=DELETE">
+                            <input type="submit" class="btn-small red" value="Delete Picture">
+                        </form>
                 </div>
             </li>
         </ul>
