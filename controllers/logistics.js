@@ -35,13 +35,13 @@ router.get('/feed', (req, res) => {
 })
 
 //I dont think Ill need this route because it's already on profile.js
-router.get('/viewPic/:id', (req, res) => {
-    db.post.findOne({
-        where: { id: req.params.id }
-    })
-    .then()
-    res.render('logistic/viewPic')
-})
+// router.get('/viewPic/:id', (req, res) => {
+//     db.post.findOne({
+//         where: { id: req.params.id }
+//     })
+//     .then()
+//     res.render('logistic/viewPic')
+// })
 
 
 
@@ -84,7 +84,7 @@ router.post('/new', (req, res) => {
 })
 
 
-//I think this should be in profile.js
+
 router.delete('/posts/:id/', (req, res) => {
     db.post.destroy({
         where: {id: req.params.id},

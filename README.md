@@ -1,6 +1,7 @@
 # Auth Boiler plate
 
-This is a boilerplate for an Express app with local user auuthentication. It exisits so I can have a customized boilerplate and don't have to start from scratch on all my projects
+This project application is called "Flash", you can think of it as "Instagram" with the basic functionality other than liking and following. Other 
+than that, a user is able to post pictures and view other user profiles.
 
 ## What it includes
 
@@ -11,7 +12,10 @@ This is a boilerplate for an Express app with local user auuthentication. It exi
 * Hasshed Passwords
 * EJS templating and EJS layouts 
 * Sequelize User model
-* Materializw styling - nav and footer
+* Materialize styling - nav/footer/icons
+* Moment 
+* Method Override - Editing and Deletion routes 
+* Cloudinary API for image storages 
 
 ## Included Model
 
@@ -26,6 +30,7 @@ This is a boilerplate for an Express app with local user auuthentication. It exi
 | password | STRING | Hash |
 | birthday | DATE | - |
 | email | STRING | Unique Login |
+| username | STRING | Unique Login |
 | bio | text | - |
 | pic | text | - |
 | createdAt| Date | Automatically added by Sequelize |
@@ -47,12 +52,20 @@ This is a boilerplate for an Express app with local user auuthentication. It exi
 | POST | '/auth/signup | Process Signup Data |
 | GET | '/auth/logout | Remove user from session + redirect |
 
-**Routes in controllers/progile.js**
+**Routes in controllers/profile.js**
 | Method | Path | Purpose |
 |--------|----------------------|------------------------------|
 | GET | '/profile/user' | Show user dashboard (authorized user only) |
 | GET | '/profile/admin' | Show admin dashboard (authorized admin only |
 | GET | '/profile/guest/:id' | View user dashboard as guest (authorized user only) |
+| PUT | '/user/:id' | Edit user information (authorized user only) |
+
+**Routes in controllers/logistics.js**
+| GET | logistic/posting | |
+| GET | logistic/userIndex | returns a list of all the users on flash |
+| GET | logistic/feed | returns a list of all the pictures posted on flash |
+| POST| /profile/user | User is able to create a post that will show on their page and feed page |
+| DELETE | /profile/user| logged-in user is able to delete a pic from their own page|
 
 ## Directions for use
 
@@ -69,10 +82,22 @@ git clone <repo_link> <new_name>
 git clone https://github.com/samjyi95/auth-boiler.git whateva-you-want-to-name-it
 ```
 
-### 2. Install the modules from package.json
+### 2. Install the modules from package.json and other packages listed below
 
 ```sh
 npm i 
+```
+```sh
+npm i cloudinary
+```
+```sh
+npm i multer
+```
+```sh
+cloudinary-core
+```
+```sh
+npm i sequelize-cli
 ```
 
 ### 3. Customize the new project
