@@ -1,7 +1,7 @@
 <h1><%= user.username %></h1>
 
 <div class="row">
-    <div class="col s4">
+    <div class="col s6 push-s1">
         <img 
         class="materialboxed" 
         width="650" 
@@ -11,16 +11,16 @@
     </div>
     <div>
         <div style="float: right;">
-            <div class="row" >
+            <div class="col s6" >
                 <div class="col ss6 offset-s4">
                     <div class="card-panel blue-grey">
-                    <li class="white-text">BIO </li>
-                    <li class="white-text"> <%= user.bio %></li>
+                        <li class="white-text">BIO </li>
+                        <li class="white-text"> <%= user.bio %></li>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <a href="/profile/user/<%= user.id %>"><button type="submit" class="btn-small grey" value="Edit Profile">Edit Profile</button></a>
+                <div class="row">
+                    <a href="/profile/user/<%= user.id %>"><button type="submit" class="btn-small grey" value="Edit Profile">Edit Profile</button></a>
+                </div>
             </div>
         </div>
     </div>
@@ -40,18 +40,22 @@
 <div class="row">
 <% posts.forEach(p => { %>
     <% if (p.userId == user.id) { %> 
-    <div class="col s4" >
-        <ul>
-            <li style="height: 550px;">
+    <div class="col s4 push-s1" style="text-align: center;" >
+        
+            <div>
+            <div style="height: 550px;" >
                 <div >
-                    <img src="<%= p.picPost %>" class="materialboxed" width="650"  style="width: 350px; height: auto;" class="materialboxed" width="650"  >
-                    <p><%= p.caption %> </p>
+                    <img src="<%= p.picPost %>" class="materialboxed" width="650"  style="width: 350px; height: auto;" class="materialboxed" width="650" >
+                    <div >
+                        <p><%= p.caption %> </p>
                         <form method="POST" action="/logistics/posts/<%= p.id %>/?_method=DELETE">
                             <input type="submit" class="btn-small red" value="Delete Picture">
                         </form>
+                    </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+            </div>
+        
     </div>
     <% } %> 
 <% }) %>
