@@ -7,7 +7,7 @@
         width="650" 
         src="<%= user.pic %>" 
         alt="profile pic" 
-        style="height: 350px; width: auto;">
+        style="height: 450px; width: auto;">
     </div>
     <div>
         <div style="float: right;">
@@ -19,9 +19,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <a href="/profile/user/<%= user.id %>"><button type="submit" class="btn-small grey" value="Edit Profile">Edit Profile</button></a>
+            <div class="row">
+                <a href="/profile/user/<%= user.id %>"><button type="submit" class="btn-small grey" value="Edit Profile">Edit Profile</button></a>
+            </div>
         </div>
     </div>
 </div>
@@ -44,7 +44,7 @@
         <ul>
             <li style="height: 550px;">
                 <div >
-                    <img src="<%= p.picPost %>" style="width: 350px; height: auto;" class="materialboxed" width="650"  >
+                    <img src="<%= p.picPost %>" class="materialboxed" width="650"  style="width: 350px; height: auto;" class="materialboxed" width="650"  >
                     <p><%= p.caption %> </p>
                         <form method="POST" action="/logistics/posts/<%= p.id %>/?_method=DELETE">
                             <input type="submit" class="btn-small red" value="Delete Picture">
