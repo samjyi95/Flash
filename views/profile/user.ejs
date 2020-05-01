@@ -10,14 +10,19 @@
         style="height: 350px; width: auto;">
     </div>
     <div>
-        <p><strong>Name:</strong> <%= user.firstname %> <%= user.lastname %> </p>
-        <p><strong>Birthday: </strong> <%= moment(user.birthday).format(' dddd MMMM Do[,] YYYY') %> </p>
-        <p><strong>Account Created on: </strong><%= moment(user.createdAt).format('dddd MMMM Do[,] YYYY') %> </p>
-        <p>
-            <%= user.bio %>
-        </p>
-        
+        <div style="float: right;">
+            <div class="row" >
+                <div class="col ss6 offset-s4">
+                    <div class="card-panel blue-grey">
+                    <li class="white-text">BIO </li>
+                    <li class="white-text"> <%= user.bio %></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <a href="/profile/user/<%= user.id %>"><button type="submit" class="btn-small grey" value="Edit Profile">Edit Profile</button></a>
+        </div>
     </div>
 </div>
 <div class="row">

@@ -2,11 +2,11 @@
 <div class="container" style="margin: auto;"> 
 <% users.forEach(u => { %>
 <div  class="row" >
-  <div class="flexbox">
-    <div class="col s6 center-align">
+  
+    <div class="col s4 offset-s4">
       <div class="card">
         <div class="card-image">
-          <img src="<%= u.pic %> " style="width: 350; height: auto;">
+          <img src="<%= u.pic %> " >
           
         </div>
         <div class="card-action" style="background-color: black;">
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </div>
   <% }) %>
 </div>

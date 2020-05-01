@@ -17,21 +17,13 @@
                     <i class="small material-icons">person</i>
                 </a>
             </li>
-            <% if (user.admin) { %>
-                <li>  
-                    <a href="/profile/admin">
-                        <i class="small material-icons">person</i>
-                    </a>
-                </li>
-            <% } %>
+            
             <li>
                 <a href="/auth/logout">
                     <i class="small material-icons">lock_outline</i>
                 </a>
             </li>
-            <li>
-                Hi <%= user.firstname %> 
-            </li>
+            
         <% } else { %> 
             <li>
                 <a href='/auth/login'>

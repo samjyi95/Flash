@@ -1,3 +1,4 @@
+<a href="/logistics/userIndex"><i class="material-icons" style="color: #607d8b; float: left;">arrow_back</i></a>
 <h1> <%= userProfile.username %> </h1>
 <!-- this page would allow a user to view someone's page but not allow them to edit pics -->
 
@@ -7,17 +8,17 @@
     <div class="col s4">
             <img src="<%= userProfile.pic %>" alt="profile pic" style="height: auto; width: 650px;" >
         </a>
-    </div>
-            <div style="float: right;">
-                <div class="row" >
-                    <div class="col ss6 offset-s4">
-                      <div class="card-panel blue-grey">
-                        <li class="white-text">BIO </li>
-                        <li class="white-text"> <%= userProfile.bio %></li>
-                      </div>
-                    </div>
-                  </div>
+</div>
+    <div style="float: right;">
+        <div class="row" >
+            <div class="col ss6 offset-s4">
+                <div class="card-panel blue-grey">
+                <li class="white-text">BIO </li>
+                <li class="white-text"> <%= userProfile.bio %></li>
+                </div>
             </div>
+        </div>
+    </div>
 </div>
 
 <div class="row">

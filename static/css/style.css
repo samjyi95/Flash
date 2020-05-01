@@ -39,9 +39,4 @@ li {
     background-color: #000000;
     text-align: left;
 }
-.flexbox {
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-}
+
