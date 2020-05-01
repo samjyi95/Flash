@@ -2,7 +2,12 @@
 
 <div class="row">
     <div class="col s4">
-        <img class="materialboxed" width="650" src="<%= user.pic %>" alt="profile pic" style="height: 350px; width: auto;">
+        <img 
+        class="materialboxed responsive-img"  
+        width="650" 
+        src="<%= user.pic %>" 
+        alt="profile pic" 
+        style="height: 350px; width: auto;">
     </div>
     <div>
         <p><strong>Name:</strong> <%= user.firstname %> <%= user.lastname %> </p>
@@ -11,9 +16,8 @@
         <p>
             <%= user.bio %>
         </p>
-        <form>
-            <input type="submit" class="btn-small grey" value="Edit Profile">
-        </form>
+        
+            <a href="/profile/user/<%= user.id %>"><button type="submit" class="btn-small grey" value="Edit Profile">Edit Profile</button></a>
     </div>
 </div>
 <div class="row">
@@ -28,20 +32,30 @@
     </li>
 </div>
 
-
+<div class="row">
 <% posts.forEach(p => { %>
     <% if (p.userId == user.id) { %> 
-    <div class="row">
+    <div class="col s4" >
         <ul>
-            <li class="col s4">
-                <a href="/logistics/viewPic/p.id"><img src="<%= p.picPost %>" style="width: 350px; height: auto" ></a>
+            <li style="height: 550px;">
+                <div style="margin: auto;">
+                <a href="/logistics/viewPic/p.id"><img src="<%= p.picPost %>" style="width: 350px; height: auto;" ></a>
                     <p><%= p.caption %> </p>
                 <form method="POST" action="/logistics/posts/<%= p.id %>/?_method=DELETE">
                     <input type="submit" class="btn-small red" value="Delete Picture">
                 </form>
+                </div>
             </li>
         </ul>
     </div>
     <% } %> 
 <% }) %>
+</div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, []);
+    elems.addEventListener('click', elems.open())
+  });
+</script>

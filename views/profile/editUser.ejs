@@ -1,0 +1,27 @@
+<h1> Edit your Profile</h1>
+
+<div class="row">
+    <form class="col s12" method="POST" action="/profile/user/?_method=PUT">
+        <div class="row">
+          <div class="input-field col s4">
+            <input type="text" id="username" name="username" value="<%= user.username %>">
+            <label for="username">Display Username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="bio" name="bio" class="materialize-textarea" ><%= user.bio %>"</textarea>
+            <label for="bio">Bio</label>
+          </div>
+        </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Placeholder" id="pic" type=url class="validate" name="pic" value="<%= user.pic %>">
+          <label for="pic">Picture</label>
+        </div>
+      </div>
+        <button class="btn waves-effect waves light blue grey" type="submit">
+          <i class="material-icon right">send</i>
+        </button>
+    </form>
+</div>

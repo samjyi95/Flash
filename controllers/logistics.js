@@ -11,9 +11,6 @@ router.get('/posting', (req, res) => {
 })
 
 
-
-
-
 //This route pushes all user data for the userIndex page
 router.get('/userIndex', (req, res) => {
     db.user.findAll()

@@ -26,7 +26,10 @@ router.get('/user', (req, res) => {
 
 //GET /profile/guest/userId - viewing a user's profile as a guest (instagram!? project 2!?)
 router.get('/guest/:id', (req,res) => {
-    db.user.findByPk(req.params.id)
+    db.user.findOne({
+        where: {id: req.params.id }, 
+        include: [ db.post ]
+    })
     .then(userProfile => {
         res.render('profile/guest', { moment, userProfile })
     })
@@ -49,6 +52,30 @@ router.get('/admin', adminLogin, (req, res) => {
         res.render('error')
     })
 })
+
+
+router.get('/user/:id', (req, res) => { 
+    res.render('profile/editUser')
+})
+
+router.put('/user', (req, res) => {
+    db.user.update(
+        {
+            username: req.body.username,
+            bio: req.body.bio,
+            pic: req.body.pic
+        },
+        {
+        where: { id: req.user.id }
+    })
+    .then(() => {
+        res.redirect('/profile/user')
+    })
+    .catch(err => {
+        res.render('error')
+    })
+})
+
 
 
 

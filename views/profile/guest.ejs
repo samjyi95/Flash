@@ -11,25 +11,23 @@
             <img src="<%= userProfile.pic %>" alt="profile pic" style="height: 500px; width: auto;">
         </a>
         <div>
-            <p><strong>Name:</strong> <%= user.firstname %> <%= user.lastname %> </p>
+            <p><strong>Name:</strong> <%= userProfile.firstname %> <%= userProfile.lastname %> </p>
         </div>
             <p>
-                <%= user.bio %>
+                <%= userProfile.bio %>
             </p>
         <div>
             
-            <% posts.forEach(p => { %>
-                <% if (p.userId == user.id) { %> 
+            <% userProfile.posts.forEach(p => { %>
+               
                 <ul>
                     <li>
                         <img src="<%= p.picPost %>" style="width: 350px; height: auto">
                         <p><%= p.caption %> </p>
                     </li>
-                    <form method="POST" action="/logistics/posts/<%= p.id %>/?_method=DELETE">
-                        <input type="submit" class="btn-small red" value="Delete Picture">
-                    </form>
+                    
                 </ul>
-                <% } %> 
+                
             <% }) %>
         </div>
     </div>
